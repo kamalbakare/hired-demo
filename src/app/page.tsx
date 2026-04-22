@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 
 // This is the "Block #1" the client wants to see: Searchable Lists
 export default function ListingPage() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   // 1. Fetch data from the "backend" (API)
