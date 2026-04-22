@@ -17,9 +17,10 @@ export default function ListingPage() {
   }, []);
 
   // 2. Logic for Search
-  const filteredItems = items.filter(item =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredItems = items.filter((item: any) => {
+  const name = item?.name || ""; // Safety check in case an item is undefined
+  return name.toLowerCase().includes(searchTerm.toLowerCase());
+});
 
   return (
     <main className="p-8 bg-gray-50 min-h-screen">
